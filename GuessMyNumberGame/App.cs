@@ -8,10 +8,59 @@ namespace GuessMyNumberGame
 {
     class App
     {
+
+        static int NumRange(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+
         public void Task()
         {
-            Console.WriteLine("Hello World");
+            while (true)
+            {
+                int randomNum = NumRange(1, 10);
+
+                int count = 1;
+
+                while (true)
+                {
+                    Console.WriteLine("Guess a number that has to be between 1 and 10.\n(If you want to quit at any time press 0):");
+                    Console.Write("\nMy Number is: ");
+
+
+                    int input = Convert.ToInt32(Console.ReadLine());
+                    if (input == 0)
+                        return;
+
+                    else if (input > randomNum)
+                    {
+                        Console.WriteLine("Awe to High, you better try again.");
+                        ++count;
+
+                        continue;
+                    }
+
+                    else if (input < randomNum)
+                    {
+                        Console.WriteLine("Awe to Low, you better try again.");
+                        ++count;
+
+                        continue;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
+                        Console.WriteLine("It took you {0} {1}.\n", count,
+                                           count == 1 ? "try" : "tries");
+                        break;
+                    }
+                }
+            }
         }
+   
     }
 }
 

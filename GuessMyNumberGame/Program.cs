@@ -10,8 +10,8 @@ namespace GuessMyNumberGame
     {
         static void Main(string[] args)
         {
-
-            //new App().Task();
+            new App().Task();
         }
     }
 }
+
