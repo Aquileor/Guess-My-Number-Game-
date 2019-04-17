@@ -36,3 +36,81 @@ namespace GuessMyNumberGame
 //    //the middle value is 7 
 //    //the list is now set to {7} 
 //<< the value searched for, 7, has been found 
+
+
+/*private void btnGuess_Click(object sender, EventArgs e)
+{
+bool guess = true;
+Convert.ToInt32(txtNumber.Text); // don't need this line
+nrToGuess = int.Parse(txtNumber.Text);
+DialogResult dialogResult;
+
+do
+{
+average = (minimum + biggest) / 2;
+dialogResult= MessageBox.Show("Is your number" + " " + average+ " ? ", "Question", MessageBoxButtons.YesNo);
+if (dialogResult== DialogResult.No && average > nrToGuess)
+{
+biggest = average;
+average = (biggest + minimum) / 2;
+}
+else if (dialogResult == DialogResult.No && average < nrToGuess)
+{
+minimum = average;
+average = (biggest + minimum) / 2;
+}
+else if (dialogResult == DialogResult.Yes)
+{
+dialogResult=MessageBox.Show("Congratulations! You guessed the number!");
+break;
+}
+else
+{
+Application.Exit();
+}
+}
+while (guess);
+
+
+    */
+
+
+/*
+ * 
+ * 
+ *  public static double Bisection_method (MyFun fun , double start , double 
+end, double? guess)
+{
+    if ( fun(start) * fun(end) > 0 )
+    {
+        Console.WriteLine("wrong Entry");
+        return -1;
+    }
+
+    double avg,tolerance,sign;
+
+    avg = (guess.HasValue) ? guess.Value : ( (start + end) / 2 );
+    do
+    {
+        tolerance = Math.Abs ( fun(end) - fun(start) );
+
+        sign = fun(start) * fun(avg);
+        if (sign < 0)
+            end = avg;
+        else if (sign > 0)
+            start = avg;
+        else
+        {
+            if (fun(start) == 0)
+                return start;
+            else return end;
+        }
+
+        avg = (start + end) / 2;
+    }
+    while ( tolerance > 0.0001 );
+
+    return end;
+}
+
+    */
