@@ -32,6 +32,7 @@ namespace GuessMyNumberGame
 
                     int input = Convert.ToInt32(Console.ReadLine());
                     if (input == 0)
+
                         return;
 
                     else if (input > randomNum)
@@ -53,8 +54,8 @@ namespace GuessMyNumberGame
                     else
                     {
                         Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
-                        Console.WriteLine("It took you {0} {1}.\n", count,
-                                           count == 1 ? "try" : "tries");
+                        Console.WriteLine($"It took you {count} tries");
+
                         break;
                     }
                 }
