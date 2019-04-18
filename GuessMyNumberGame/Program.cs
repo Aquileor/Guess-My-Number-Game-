@@ -14,13 +14,13 @@ namespace GuessMyNumberGame
         static void Main(string[] args)
         {
             //Write a console application implementing the bisection algorithm. 
-            new Implement_bisection_algorithm().FirstTask();
+            //new Implement_bisection_algorithm().FirstTask();
 
             //Implement a version of Guess My Number, where the computer randomly chooses a number between 1 and 1000, and the human guesses the number. 
-            //new Guess_my_number_human_plays().MiddleTask();
+           // new Guess_my_number_human_plays().MiddleTask();
 
             //Implement a version of Guess My Number, where the human chooses a number between 1 and 100, and the computer guesses the number.
-           //new Guess_my_number__computer_plays().LastTask();
+           new Guess_my_number__computer_plays().LastTask();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace GuessMyNumberGame
         public void FirstTask()
         {
             
-  while (true)
+           while (true)
             {
                 int randomNum = NumberList();
 

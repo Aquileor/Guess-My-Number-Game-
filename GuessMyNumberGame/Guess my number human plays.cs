@@ -25,7 +25,7 @@ namespace GuessMyNumberGame
 
                 while (true)
                 {
-                    Console.WriteLine("Guess a number that has to be between 1 and 10.\n(If you want to quit at any time press 0):");
+                    Console.WriteLine("Guess a number that has to be between 1 and 1,000.\n(If you want to quit at any time press 0):");
                     Console.Write("\nMy Number is: ");
 
 
@@ -54,7 +54,8 @@ namespace GuessMyNumberGame
                     {
                         Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
                         Console.WriteLine($"It took you {count} tries");
-
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                     }
                 }
