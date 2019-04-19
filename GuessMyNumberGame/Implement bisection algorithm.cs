@@ -42,7 +42,7 @@ namespace GuessMyNumberGame
 
                 while (true)
                 {
-                    Console.WriteLine("Guess a number that has to be between 1 and 10.\n(If you want to quit at any time press 0):");
+                    Console.WriteLine($"Guess a number that has to be between 1 and 10.\n(If you want to quit at any time press 0)."); //\nThe new range is {randomNum}
                     Console.Write("\nMy Number is: ");
 
 
@@ -53,7 +53,7 @@ namespace GuessMyNumberGame
 
                     else if (InputVar > randomNum)
                     {
-                        Console.WriteLine("Awe to High,you better try again.\n Remaing list ");
+                        Console.WriteLine("\nAwe to High,you better try again.");
                         ++count;
 
                         continue;
@@ -61,7 +61,7 @@ namespace GuessMyNumberGame
 
                     else if (InputVar < randomNum)
                     {
-                        Console.WriteLine("Awe to Low, you better try again.");
+                        Console.WriteLine("\nAwe to Low, you better try again.");
                         ++count;
 
                         continue;

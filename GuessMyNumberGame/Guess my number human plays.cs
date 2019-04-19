@@ -19,13 +19,13 @@ namespace GuessMyNumberGame
         {
             while (true)
             {
-                int randomNum = NumRange(1, 10);
+                int randomNum = NumRange(1, 100);
 
                 int count = 1;
 
                 while (true)
                 {
-                    Console.WriteLine("Guess a number that has to be between 1 and 1,000.\n(If you want to quit at any time press 0):");
+                    Console.WriteLine("Guess a number that has to be between 1 and 100.\n(If you want to quit at any time press 0):");
                     Console.Write("\nMy Number is: ");
 
 

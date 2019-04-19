@@ -10,12 +10,7 @@ namespace GuessMyNumberGame
 {
     class Guess_my_number__computer_plays
     {
-        
-        static int NumRange(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
+        public int randomNum { get; private set; }
 
         static int CompGuess(int min, int max)
         {
@@ -23,55 +18,67 @@ namespace GuessMyNumberGame
             return random.Next(min, max);
         }
 
-        public void LastTask()
-        {
-            Console.WriteLine("The number you input between 1 and 10 is the number the computer has to guess.\n(If you want to quit at any time press 0):");
-            Console.Write("\nMy Number is: \n");
+     
+        
 
-            int randomNum = Convert.ToInt32(Console.ReadLine());
+        public  void LastTask()
+        {
+            //Console.WriteLine("The number you input between 1 and 10 is the number the computer has to guess.\n(If you want to quit at any time press 0):");
+            //Console.Write("\nEnter a random number for the computer to guess: ");
+
+            //int randomNum = Convert.ToInt32(Console.ReadLine());
 
             while (true)
             {
+                //FirstStep();
                 
                 int guess = CompGuess(1, 10);
 
                 int count = 1;
 
-                while (true)
-                {
-                    Console.WriteLine("The Computer is going to guess a number that has to be between 1 and 10.\n(If you want to quit at any time press 0):");
-                    Console.Write($"\nMy Number is: {guess}\n");
-
-
                     int InputVar = guess;
-                    if (InputVar == 0)
+                    Console.Write($"\nThe computer guessed the Number: {guess}\n");
 
-                        return;
 
-                    else if (InputVar > randomNum)
+                    while (true)
                     {
-                        Console.WriteLine("Awe to High, you better try again.");
+                        if (InputVar == 0)
+
+                            return;
+
+                        else if (InputVar > randomNum)
+                        {
+                            Console.WriteLine("Awe to High, you better try again.");
                         ++count;
-                       
-                        continue;
-                    }
-
-                    else if (InputVar < randomNum)
-                    {
-                        Console.WriteLine("Awe to Low, you better try again.");
-                        ++count;
-
-                        continue;
-                    }
-
-                    else
-                    {
-                        Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
-                        Console.WriteLine($"It took you {count} tries");
-                        Console.ReadLine();
+                        randomNum = randomNum / 2;
                         LastTask();
-                        break;
-                    }
+                        return;
+                      
+
+
+                       // continue;
+                        }
+
+                        else if (InputVar < randomNum)
+                        {
+                            Console.WriteLine("Awe to Low, you better try again.");
+                        ++count;
+                        //randomNum = randomNum / 2;
+
+
+
+                        continue;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
+                            Console.WriteLine($"It took you {count} tries");
+                            Console.ReadLine();
+                            LastTask();
+                            break;
+                        }
+                    
                 }
             }
         }
