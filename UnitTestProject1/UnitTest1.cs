@@ -1,35 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GuessMyNumberGame
+namespace UnitTestProject1
 {
-   public class Guess_my_number_human_plays
+    [TestClass()]
+    public class Guess_my_number_human_plays
+
     {
-        public static int NumRange(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
 
-
+        [TestMethod()]
         public void MiddleTask()
         {
             while (true)
             {
-                int randomNum = NumRange(1, 100);
+                int randomNum = 33;
 
                 int count = 1;
 
                 while (true)
                 {
-                    Console.WriteLine("Guess a number that has to be between 1 and 1,000.\n(If you want to quit at any time press 0):");
-                    Console.Write("\nMy Number is: ");
 
-
-                    int InputVar = Convert.ToInt32(Console.ReadLine());
+                    int InputVar =33;
                     if (InputVar == 0)
 
                         return;
@@ -63,4 +54,5 @@ namespace GuessMyNumberGame
         }
 
     }
+
 }
