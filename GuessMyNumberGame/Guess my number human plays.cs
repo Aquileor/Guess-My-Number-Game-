@@ -8,7 +8,7 @@ namespace GuessMyNumberGame
 {
     class Guess_my_number_human_plays
     {
-        static int NumRange(int min, int max)
+        public static int NumRange(int min, int max)
         {
             Random random = new Random();
             return random.Next(min, max);

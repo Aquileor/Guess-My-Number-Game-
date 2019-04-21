@@ -8,112 +8,81 @@ using System.Threading.Tasks;
 
 namespace GuessMyNumberGame
 {
-    class Guess_my_number__computer_plays
+   class Guess_my_number__computer_plays
     {
-        public int randomNum { get; private set; }
+        int RadomNum;
+        int MinMin;
+        int MaxMax;
+        bool guessed;
 
-        static int CompGuess(int min, int max)
+
+        public void GameOptions()
         {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
 
-     
-        
+            Console.WriteLine($"\nThe computer just asked is {RadomNum} your number?");
+            Console.WriteLine("Select from the options below.\n" + "Q: Awe to Low, you better try again" + " W: Awe to High, you better try again. " + " E: Yes that is my the number I Picked");
 
-        public  void LastTask()
-        {
-            //Console.WriteLine("The number you input between 1 and 10 is the number the computer has to guess.\n(If you want to quit at any time press 0):");
-            //Console.Write("\nEnter a random number for the computer to guess: ");
+            var name = Console.ReadKey(true).Key;
 
-            //int randomNum = Convert.ToInt32(Console.ReadLine());
+            switch (name)
 
-            while (true)
             {
-                //FirstStep();
-                
-                int guess = CompGuess(1, 10);
+                case ConsoleKey.Q:
+                    MinMin = ((MinMin + MaxMax) / 2) + 1;
+                    break;
 
-                int count = 1;
+                case ConsoleKey.W:
+                    MaxMax = ((MinMin + MaxMax) / 2) - 1;
+                    break;
 
-                    int InputVar = guess;
-                    Console.Write($"\nThe computer guessed the Number: {guess}\n");
+                case ConsoleKey.E:
+                guessed = false;
+                    break;
 
+                default:
 
-                    while (true)
-                    {
-                        if (InputVar == 0)
-
-                            return;
-
-                        else if (InputVar > randomNum)
-                        {
-                            Console.WriteLine("Awe to High, you better try again.");
-                        ++count;
-                        randomNum = randomNum / 2;
-                        LastTask();
-                        return;
-                      
-
-
-                       // continue;
-                        }
-
-                        else if (InputVar < randomNum)
-                        {
-                            Console.WriteLine("Awe to Low, you better try again.");
-                        ++count;
-                        //randomNum = randomNum / 2;
-
-
-
-                        continue;
-                        }
-
-                        else
-                        {
-                            Console.WriteLine($"You finally guessed the right number. Yay! The number was {randomNum}!");
-                            Console.WriteLine($"It took you {count} tries");
-                            Console.ReadLine();
-                            LastTask();
-                            break;
-                        }
-                    
-                }
+                    Console.WriteLine("Invalid Input Please Select fro the options below\n");
+                    GameOptions();
+                    break;
             }
+
         }
-        
+
+
+        public void FinalTask()
+        {
+            int maxValue = 100;
+            int minValue = 1;
+
+            Console.WriteLine("Think of a number between 1 and 100 that you want the computer to guess.");
+            Console.WriteLine();
+
+         int[] numbers = Enumerable.Range(minValue, maxValue).ToArray();
+
+            guessed = true;
+
+            int count = 0;
+
+            MinMin = 0;
+
+            MaxMax = maxValue - 1;
+
+            while (guessed)
+            {
+                count++;
+                RadomNum = numbers[(MinMin + MaxMax) / 2];
+                GameOptions();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"You finally guessed the right number. Yay! The number was {RadomNum}!");
+            Console.WriteLine($"It took you {count} tries..");
+            Console.WriteLine("Thanks for Playing (^.^)");
+
+
+        }
+
+      
     }
+
 }
-
-
-/*
-from random import randint
-
-print ("In this program you will enter a number between 1 - 100."
-       "\nAfter the computer will try to guess your number!")
-
-number = 0
-
-while number < 1 or number >100:
-    number = int(input("\n\nEnter a number for the computer to guess: "))
-    if number > 100:
-        print ("Number must be lower than or equal to 100!")
-    if number < 1:
-        print ("Number must be greater than or equal to 1!")
-
-guess = randint(1, 100)
-
-print ("The computer takes a guess...", guess)
-
-while guess != number:
-    if guess > number:
-        guess -= 1
-        guess = randint(1, guess)
-    else:
-        guess += 1
-        guess = randint(guess, 100)
-    print ("The computer takes a guess...", guess)
-
-print ("The computer guessed", guess, "and it was correct!")
-*/

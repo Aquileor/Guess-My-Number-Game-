@@ -21,14 +21,10 @@ namespace GuessMyNumberGame
 
             //Implement a version of Guess My Number, where the human chooses a number between 1 and 100, and the computer guesses the number.
 
-            Console.WriteLine("The number you input between 1 and 10 is the number the computer has to guess.\n(If you want to quit at any time press 0):");
-            Console.Write("\nEnter a random number for the computer to guess: ");
-
-            int randomNum = Convert.ToInt32(Console.ReadLine());
-            //new Guess_my_number__computer_plays().LastTask();
+           new Guess_my_number__computer_plays().FinalTask();
 
 
-            new ThisIsRandomTestCodes().Play();
+           // new ThisIsRandomTestCodes().FinalTask();
         }
     }
 }
